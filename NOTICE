@@ -18,12 +18,6 @@ Third-party acknowledgements
   A file-by-file account of what changed, and why, is in
   docs/与原实现的差异说明.md.
 
-- DeepSeek Bot (Apache-2.0, https://github.com/FeiZhuLulu/DeepSeek-Bot): the original
-  implementation's interaction and product design reference. No code is included.
-
-- OpenMausBot (https://github.com/milind-soni/OpenMausBot): interface reference for a
-  Bot list with per-Bot threads. No code is included.
-
 Trademarks
 ----------
 

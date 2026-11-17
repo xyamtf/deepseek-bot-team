@@ -133,17 +133,11 @@ HTTP/SSE、客户端渲染（jsdom）、能力包裁剪、插件清单解析、�
 
 ## 许可
 
-MIT。本仓库是 `minimax-bot 0.7.24`（Copyright (c) 2026 MiniMax，MIT）的衍生作品，
-保留原版权声明与许可声明；本移植新增部分同样以 MIT 发布。详见 [LICENSE](LICENSE) 与
+MIT。本仓库是 `minimax-bot 0.7.24`（Copyright (c) 2026 MiniMax，MIT）的衍生作品，保留原版权声明与许可声明；
+本移植新增部分同样以 MIT 发布。详见 [LICENSE](LICENSE)、[NOTICE](NOTICE) 与
 [`docs/与原实现的差异说明.md`](docs/与原实现的差异说明.md)。
 
-> `MiniMax Bot`、`minimax-bot`、`MiniMax Code` 是原项目与本移植所依赖产品的名称/商标；
-> 本产品名称为 **Dsh bot**。为兼容既有客户端与旧数据，MCP 端点路径（`/mcp/minimax-bot`）、
+> 产品名称为 **Dsh bot**；`MiniMax Bot`、`minimax-bot`、`MiniMax Code` 是其各自权利人的名称/商标，
+> 本项目仅用来说明来源。为兼容既有客户端与旧数据，MCP 端点路径（`/mcp/minimax-bot`）、
 > `serverInfo.name` 与工具前缀 `mcp__minimax-bot__` 保持原样。
 
-## 致谢
-
-- [minimax-bot](https://github.com/MiniMax-AI) 0.7.24 —— 团队、群聊、主 Bot、记忆、任务与 21 个 MCP 工具的原始设计与实现（MIT）。
-- [DeepSeek Bot](https://github.com/FeiZhuLulu/DeepSeek-Bot)（Apache-2.0）—— 原实现的交互与产品设计参考。
-- [OpenMausBot](https://github.com/milind-soni/OpenMausBot) —— Bot 列表 + 每 Bot 独立线程的界面参考。
-- 界面与文档由本项目维护者整理。
