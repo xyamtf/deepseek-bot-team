@@ -1,0 +1,35 @@
+Dsh bot
+=======
+
+Copyright (c) 2026 MiniMax
+  service/ is a derivative of minimax-bot 0.7.24 (MIT), https://github.com/MiniMax-AI.
+  The original copyright notice and this license notice are retained in LICENSE.
+
+Copyright (c) 2026 Dsh bot contributors
+  the DSH plugin (plugin/), the standalone host and DeepSeek agent runtime
+  (service/miniapp/node/standalone-host.mjs, agent-runtime.mjs, model-sync.mjs,
+  plugin-sync.mjs), the test suite additions, and the documentation.
+
+Third-party acknowledgements
+----------------------------
+
+- minimax-bot 0.7.24 (MIT, Copyright (c) 2026 MiniMax): the team, group, main-Bot,
+  memory, task and 21 MCP tool design and implementation that service/ is ported from.
+  A file-by-file account of what changed, and why, is in
+  docs/与原实现的差异说明.md.
+
+- DeepSeek Bot (Apache-2.0, https://github.com/FeiZhuLulu/DeepSeek-Bot): the original
+  implementation's interaction and product design reference. No code is included.
+
+- OpenMausBot (https://github.com/milind-soni/OpenMausBot): interface reference for a
+  Bot list with per-Bot threads. No code is included.
+
+Trademarks
+----------
+
+"MiniMax", "MiniMax Bot", "minimax-bot" and "MiniMax Code" belong to their owners and
+are used here only to describe what this project derives from. The product in this
+repository is called "Dsh bot". The MCP endpoint path (/mcp/minimax-bot), the
+serverInfo.name value and the mcp__minimax-bot__ tool prefix are kept as-is so
+existing clients and existing data keep working; they are protocol identifiers, not
+branding.
