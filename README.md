@@ -18,6 +18,39 @@
 
 ---
 
+## 一键安装
+
+**Windows（PowerShell）**
+
+```powershell
+iwr https://raw.githubusercontent.com/xyamtf/deepseek-bot-team/main/scripts/install.ps1 -UseBasicParsing | iex
+```
+
+**macOS / Linux**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/xyamtf/deepseek-bot-team/main/scripts/install.sh | bash
+```
+
+脚本做四件事：检查 Node ≥ 20.11 → 从 [Releases](https://github.com/xyamtf/deepseek-bot-team/releases) 取最新包 →
+解压到 `~/.deepseek-bot-team`（`-Dir` / `DSBOT_DIR` 可改）→ 自检模块可加载并打印下一步。
+
+装完只差一步（插件方式，推荐）：DSH → **插件** → **添加插件** → 选 `<安装目录>/plugin`。
+想独立跑：`node "<安装目录>/service/bin/dsteam.mjs" --port 8790` → 打开 `http://127.0.0.1:8790/bot`。
+
+<details>
+<summary>手动安装（不想跑脚本 / 想跟 git）</summary>
+
+1. 下载 [Releases](https://github.com/xyamtf/deepseek-bot-team/releases) 里的 `deepseek-bot-team-v1.0.0.zip` 解压，
+   或 `git clone https://github.com/xyamtf/deepseek-bot-team`
+2. DSH → 插件 → 添加插件 → 选择 `plugin/` 目录
+3. 左下入口 → 新建 Bot → 开聊
+
+</details>
+
+---
+
+
 ## 这是什么
 
 它由两部分组成，装一次就都有了：
