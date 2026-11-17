@@ -1133,6 +1133,7 @@ export function renderOverlay({ preserveEdits = false } = {}) {
   if (o.kind === 'palette') modal = paletteModal(o);
   else if (o.kind === 'create-bot') modal = createBotModal(o);
   else if (o.kind === 'create-group') modal = createGroupModal(o);
+  else if (o.kind === 'rename') modal = renameModal(o);
   else modal = settingsModal(o);
   modal.removeAttribute('role');
   modal.removeAttribute('aria-modal');
@@ -1706,6 +1707,58 @@ function legend(rows) {
   return h('div', { class: 'legend' }, rows.map((r) => h('span', null, h('i', { style: { background: inkOf(r.color) } }), r.name)));
 }
 
+// ---------------------------------------------------------------- rename
+/**
+ * Renames a Bot or a group without opening its settings page: the menu's 「重命名」 lands here,
+ * the name is validated by the server exactly as it is on create, and the sidebar re-renders.
+ */
+function renameModal(o) {
+  const target = o.target;
+  const input = /** @type {HTMLInputElement} */ (h('input', {
+    class: 'input',
+    name: 'name',
+    required: true,
+    maxlength: 24,
+    value: target.name ?? '',
+    autofocus: true,
+    'aria-label': t('panels.rename.field'),
+  }));
+  const form = h(
+    'form',
+    { class: 'form' },
+    h('label', { class: 'field' }, h('span', null, t('panels.rename.field')), input),
+    h(
+      'div',
+      { class: 'row-end form-actions' },
+      h('button', { type: 'button', class: 'btn', onclick: closeOverlay }, t('panels.common.cancel')),
+      h('button', { type: 'submit', class: 'btn primary' }, t('panels.rename.submit')),
+    ),
+  );
+  form.addEventListener(
+    'submit',
+    guard(async (event) => {
+      event.preventDefault();
+      const name = input.value.trim();
+      if (!name) return;
+      if (name === target.name) {
+        closeOverlay();
+        return;
+      }
+      const path = target.kind === 'bot' ? `/api/bots/${target.id}` : `/api/groups/${target.id}`;
+      await api('PATCH', path, { name });
+      closeOverlay();
+      toast(t('panels.rename.done', { name }));
+      nav.renderAll();
+    }),
+  );
+  return h(
+    'div',
+    { class: 'modal', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'modal-title', style: { width: 'min(420px, 100%)' } },
+    modalHead(t('panels.rename.title')),
+    h('div', { class: 'modal-body' }, form),
+  );
+}
+
 // ================================================================== context menu
 /** @type {HTMLElement | null} */
 let menuEl = null;
@@ -1729,6 +1782,7 @@ export function openContextMenu(x, y, chatId) {
   };
   const entries = [
     [t('panels.menu.open'), 'chat', () => nav.openChat(chatId)],
+    [t('panels.menu.rename'), 'edit', () => openOverlay({ kind: 'rename', target: { kind: isBot ? 'bot' : 'group', id: item.id, name: item.name } })],
     [item.pinned ? t('panels.menu.unpin') : t('panels.menu.pin'), 'pin', guard(() => api('PATCH', isBot ? `/api/bots/${item.id}` : `/api/groups/${item.id}`, { pinned: !item.pinned }))],
     [isBot ? t('panels.botSettings.title') : t('panels.groupSettings.title'), 'gear', () => { nav.openChat(chatId); state.drawer = { ...state.drawer, open: true, view: 'settings' }; nav.renderDrawer(); }],
     [t('panels.chat.newChat'), 'eraser', () => resetChat(chatId)],

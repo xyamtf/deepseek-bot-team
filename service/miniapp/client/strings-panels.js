@@ -390,6 +390,11 @@ export default {
 
     // context menu
     'panels.menu.open': '打开',
+    'panels.menu.rename': '重命名',
+    'panels.rename.title': '重命名',
+    'panels.rename.field': '名称',
+    'panels.rename.submit': '保存',
+    'panels.rename.done': '已重命名为「{name}」',
     'panels.menu.pin': '置顶',
     'panels.menu.unpin': '取消置顶',
     'panels.menu.label': '{name} 的操作',
@@ -779,6 +784,11 @@ export default {
 
     // context menu
     'panels.menu.open': 'Open',
+    'panels.menu.rename': 'Rename',
+    'panels.rename.title': 'Rename',
+    'panels.rename.field': 'Name',
+    'panels.rename.submit': 'Save',
+    'panels.rename.done': 'Renamed to "{name}"',
     'panels.menu.pin': 'Pin',
     'panels.menu.unpin': 'Unpin',
     'panels.menu.label': 'Actions for {name}',
