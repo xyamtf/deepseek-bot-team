@@ -2,8 +2,7 @@
   <img src="docs/images/hero.svg" alt="Dsh bot — 一支长期在线的多 Bot 团队，装进 DeepSeek Harness" width="100%">
 </div>
 
-# Dsh bot
-
+# <img src="docs/images/icon-512.png" width="44" alt="Deepseek bot icon"> Dsh bot
 **把一支长期在线的多 Bot 团队，装进 DeepSeek Harness。**
 
 左侧栏一行入口 → 面板里就是完整团队界面：每个 Bot 有自己的会话、头像与能力；Bot 之间可以私聊派活、
@@ -13,6 +12,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520.11-3c873a.svg)](https://nodejs.org/)
 [![Tests](https://img.shields.io/badge/tests-433%20passing-3fb950.svg)](#测试)
+[![SkillHub](https://img.shields.io/badge/SkillHub-Deepseek%20bot-4c72f5.svg)](https://skillhub.cn/skills/deepseek-bot)
 
 <p align="center"><img src="docs/images/quickstart.svg" alt="三步上手" width="100%"></p>
 
