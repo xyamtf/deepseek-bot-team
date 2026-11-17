@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Whale">
+  <defs>
+    <linearGradient id="whale-body" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#6E8CFF"/>
+      <stop offset="1" stop-color="#3454E8"/>
+    </linearGradient>
+    <linearGradient id="whale-belly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAF2FF"/>
+      <stop offset="1" stop-color="#C7DAFF"/>
+    </linearGradient>
+  </defs>
+  <!-- body -->
+  <path d="M46 150c0-38 34-66 78-66 45 0 79 27 79 63 0 12-4 23-11 32 15 3 26 12 31 24-18 3-33-1-44-10-15 12-36 19-60 19-45 0-73-26-73-62z" fill="url(#whale-body)"/>
+  <!-- belly -->
+  <path d="M70 176c12 12 31 18 52 18 20 0 37-6 49-17-8 16-27 27-50 27-24 0-43-10-51-28z" fill="url(#whale-belly)" opacity=".92"/>
+  <!-- eye -->
+  <circle cx="104" cy="136" r="7.5" fill="#0B1A4A"/>
+  <circle cx="106.5" cy="133.5" r="2.6" fill="#FFFFFF"/>
+  <!-- smile -->
+  <path d="M84 156c7 6 15 9 24 9" fill="none" stroke="#0B1A4A" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+  <!-- pectoral fin -->
+  <path d="M96 170c-10 8-24 10-36 6 6 12 21 18 36 13 6-2 10-6 12-11z" fill="#2B45C9" opacity=".9"/>
+  <!-- spout -->
+  <g fill="#8FB2FF" opacity=".95">
+    <path d="M120 74c2-14 12-22 22-24-4 10-3 18 2 24-8 4-17 4-24 0z"/>
+    <circle cx="106" cy="62" r="6"/>
+    <circle cx="146" cy="52" r="4.5"/>
+    <circle cx="92" cy="78" r="4"/>
+  </g>
+</svg>

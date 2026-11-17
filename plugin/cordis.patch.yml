@@ -1,0 +1,19 @@
+# dsh-bot-team bundle layer.
+#
+# 1. bot-team-host: supervises the local bot-team service (starts it if it is not already up,
+#    stops only what it started) and exposes lifecycle tools to the model.
+# 2. bot-team-mcp: registers that service's 21 MCP tools on ctx.tools as mcp__bot-team__*.
+#    failOnStartupError stays false so a slow or crashed service never blocks DSH startup;
+#    the client reconnects on its own.
+- insert:
+    - id: bot-team-host
+      name: dsh-bot-team
+    - id: bot-team-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: bot-team
+        transport: streamable-http
+        url: 'http://127.0.0.1:8790/mcp/minimax-bot'
+        toolCallTimeoutMs: 900000
+        startupTimeoutMs: 30000
+        failOnStartupError: false

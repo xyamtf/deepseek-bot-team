@@ -1,0 +1,34 @@
+{
+  "name": "dsh-bot-team",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "把「多 Bot 团队」接进 DeepSeek Harness：一键起停本地团队服务、把 21 个团队工具注册给 Agent，并在右侧边栏标签页里打开团队界面。",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    },
+    "manifestVersion": 1
+  }
+}

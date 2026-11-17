@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-label="三步上手">
+  <rect width="1200" height="460" fill="#ffffff"/>
+  <g font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+
+    <!-- step 1 -->
+    <rect x="40" y="46" width="330" height="368" rx="20" fill="#f7f9ff" stroke="#d3defb"/>
+    <circle cx="86" cy="92" r="20" fill="#4c72f5"/>
+    <text x="80" y="99" font-size="20" font-weight="700" fill="#ffffff">1</text>
+    <text x="120" y="100" font-size="19" font-weight="700" fill="#22305c">插件装进 DSH</text>
+    <text x="66" y="150" font-size="13.5" fill="#52618a">Copilot 式安装：</text>
+    <rect x="66" y="164" width="278" height="74" rx="10" fill="#0f1a36"/>
+    <text x="80" y="192" font-size="12.5" fill="#9fc3ff" font-family="Consolas, monospace">插件 → 添加插件</text>
+    <text x="80" y="214" font-size="12.5" fill="#9fc3ff" font-family="Consolas, monospace">选择 plugin/ 目录</text>
+    <text x="66" y="266" font-size="13.5" fill="#52618a">左侧栏出现一行</text>
+    <text x="66" y="288" font-size="13.5" fill="#52618a">「Dsh bot」</text>
+    <circle cx="112" cy="330" r="14" fill="#4c72f5" opacity="0.15"/>
+    <circle cx="112" cy="330" r="5" fill="#3fb950"/>
+    <text x="136" y="336" font-size="13" fill="#52618a">插件自动起停团队服务</text>
+
+    <!-- step 2 -->
+    <rect x="435" y="46" width="330" height="368" rx="20" fill="#f7f9ff" stroke="#d3defb"/>
+    <circle cx="481" cy="92" r="20" fill="#4c72f5"/>
+    <text x="475" y="99" font-size="20" font-weight="700" fill="#ffffff">2</text>
+    <text x="515" y="100" font-size="19" font-weight="700" fill="#22305c">新建 Bot</text>
+    <text x="461" y="150" font-size="13.5" fill="#52618a">名字 / 角色 / 指令</text>
+    <text x="461" y="176" font-size="13.5" fill="#52618a">点头像换图片，选 12 种皮肤</text>
+    <text x="461" y="202" font-size="13.5" fill="#52618a">勾选「插件与能力」</text>
+    <text x="461" y="228" font-size="13.5" fill="#52618a">选模型（DSH 模型库 / 自定义）</text>
+    <g font-size="12" fill="#0f1a36">
+      <rect x="461" y="252" width="104" height="28" rx="14" fill="#dbe6ff"/>
+      <text x="474" y="271">团队协作</text>
+      <rect x="573" y="252" width="104" height="28" rx="14" fill="#dbe6ff"/>
+      <text x="586" y="271">长期记忆</text>
+      <rect x="461" y="288" width="104" height="28" rx="14" fill="#dbe6ff"/>
+      <text x="474" y="307">文件读写</text>
+      <rect x="573" y="288" width="104" height="28" rx="14" fill="#dbe6ff"/>
+      <text x="586" y="307">命令行</text>
+    </g>
+    <text x="461" y="356" font-size="13.5" fill="#52618a">「已安装 214 个 DSH 插件…」</text>
+    <text x="461" y="378" font-size="13.5" fill="#52618a">实时同步，新装即出现</text>
+
+    <!-- step 3 -->
+    <rect x="830" y="46" width="330" height="368" rx="20" fill="#f7f9ff" stroke="#d3defb"/>
+    <circle cx="876" cy="92" r="20" fill="#4c72f5"/>
+    <text x="870" y="99" font-size="20" font-weight="700" fill="#ffffff">3</text>
+    <text x="910" y="100" font-size="19" font-weight="700" fill="#22305c">开始聊天</text>
+    <rect x="856" y="132" width="278" height="120" rx="12" fill="#ffffff" stroke="#d3defb"/>
+    <rect x="872" y="148" width="150" height="30" rx="15" fill="#4c72f5"/>
+    <text x="888" y="169" font-size="12.5" fill="#ffffff">团队里有谁？</text>
+    <rect x="872" y="190" width="228" height="46" rx="12" fill="#eef2ff"/>
+    <text x="886" y="211" font-size="12.5" fill="#22305c">现在团队里只有 1 个 Bot——</text>
+    <text x="886" y="229" font-size="12.5" fill="#22305c">就是我自己（Chief）</text>
+    <text x="872" y="262" font-size="11.5" fill="#7c8aa8">⚙ list_team ✓ · 1.4s</text>
+    <text x="856" y="288" font-size="13.5" fill="#52618a">流式回复、工具调用、</text>
+    <text x="856" y="310" font-size="13.5" fill="#52618a">停止/清空、完整界面</text>
+    <text x="856" y="344" font-size="13.5" fill="#52618a">群聊接力：@名字</text>
+    <text x="856" y="366" font-size="13.5" fill="#52618a">后台任务、定时、用量</text>
+  </g>
+</svg>

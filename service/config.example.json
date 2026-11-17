@@ -1,0 +1,30 @@
+{
+  "port": 8790,
+  "dataDir": "./data",
+  "api": {
+    "baseURL": "https://api.deepseek.com",
+    "apiKey": "",
+    "model": "deepseek-chat"
+  },
+  "runtime": {
+    "providerId": "deepseek",
+    "models": [
+      {
+        "modelId": "deepseek-chat",
+        "displayName": "DeepSeek Chat",
+        "thinking": { "efforts": ["low", "medium", "high"] }
+      },
+      {
+        "modelId": "deepseek-reasoner",
+        "displayName": "DeepSeek Reasoner",
+        "thinking": { "efforts": ["low", "medium", "high"] }
+      }
+    ],
+    "maxToolRounds": 12,
+    "requestTimeoutMs": 120000,
+    "autoApprove": true,
+    "workspaceRoot": "",
+    "allowShell": true
+  },
+  "logLevel": "info"
+}

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Dsh bot",
+    "description": "Brings a long-lived multi-Bot team into DSH: one sidebar row, the full team UI embedded in the panel with no extra window. Each Bot has its own thread, avatar and skin; a new Bot can load capability packs (team, helpers, memory, schedules, files, shell) and see the DSH plugins you already installed, and can use a custom model or the model library DSH already configured.",
+    "detail": "docs/DETAIL.md"
+  }
+}

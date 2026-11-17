@@ -1,0 +1,14 @@
+{
+  "name": "deepseek-bot-team",
+  "version": "0.7.24-ds.1",
+  "private": true,
+  "description": "DeepSeek Bot Team：minimax-bot 0.7.24 的独立化移植，脱离 MiniMax Code 即可运行（HTTP 服务 + Web UI + Streamable HTTP MCP），Bot 回合由自带的 DeepSeek Agent 运行时驱动。",
+  "type": "module",
+  "bin": {
+    "dsteam": "./bin/dsteam.mjs"
+  },
+  "mcode": {
+    "schemaVersion": 2,
+    "miniApp": "./miniapp/miniapp.json"
+  }
+}

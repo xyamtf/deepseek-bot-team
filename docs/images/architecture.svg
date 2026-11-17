@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-label="Dsh bot 架构：DSH 插件 + 团队服务">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5c7bd6"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="620" fill="#ffffff"/>
+  <g font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+
+    <!-- DSH side -->
+    <rect x="40" y="40" width="470" height="300" rx="18" fill="#f3f6ff" stroke="#c9d6f8"/>
+    <text x="66" y="78" font-size="20" font-weight="700" fill="#1c3f8f">DeepSeek Harness（DSH）</text>
+
+    <rect x="66" y="100" width="200" height="86" rx="12" fill="#ffffff" stroke="#c9d6f8"/>
+    <text x="86" y="130" font-size="16" font-weight="600" fill="#22305c">左侧栏 · Dsh bot</text>
+    <text x="86" y="154" font-size="13" fill="#5c6a8c">一行入口，和「插件」并列</text>
+    <text x="86" y="174" font-size="13" fill="#5c6a8c">点开是团队页</text>
+
+    <rect x="290" y="100" width="196" height="86" rx="12" fill="#ffffff" stroke="#c9d6f8"/>
+    <text x="310" y="130" font-size="16" font-weight="600" fill="#22305c">内嵌完整界面</text>
+    <text x="310" y="154" font-size="13" fill="#5c6a8c">Bot 列表 · 群聊 · 记忆</text>
+    <text x="310" y="174" font-size="13" fill="#5c6a8c">任务 · 用量 · 头像</text>
+
+    <rect x="66" y="206" width="420" height="110" rx="12" fill="#ffffff" stroke="#c9d6f8"/>
+    <text x="86" y="236" font-size="16" font-weight="600" fill="#22305c">DSH 插件行（cordis.patch.yml）</text>
+    <text x="86" y="260" font-size="13" fill="#5a6b8f">bot-team-host：起停服务、提供 bot_team_* 工具</text>
+    <text x="86" y="282" font-size="13" fill="#5a6b8f">bot-team-mcp：把 21 个团队工具注册成 mcp__bot-team__*</text>
+    <text x="86" y="304" font-size="13" fill="#5a6b8f">读 profile 的 bundle 清单 → /api/plugins 同步插件库</text>
+
+    <!-- service side -->
+    <rect x="640" y="40" width="520" height="300" rx="18" fill="#f6fff9" stroke="#bfe6cd"/>
+    <text x="666" y="78" font-size="20" font-weight="700" fill="#14603a">团队服务（独立 Node 进程，仅监听 127.0.0.1:8790）</text>
+
+    <rect x="666" y="100" width="220" height="86" rx="12" fill="#ffffff" stroke="#bfe6cd"/>
+    <text x="686" y="130" font-size="16" font-weight="600" fill="#1c4b34">HTTP + Web UI /bot</text>
+    <text x="686" y="154" font-size="13" fill="#4c6b5c">原生 JS，无构建步骤</text>
+    <text x="686" y="174" font-size="13" fill="#4c6b5c">SSE 推送、消息分页</text>
+
+    <rect x="906" y="100" width="228" height="86" rx="12" fill="#ffffff" stroke="#bfe6cd"/>
+    <text x="926" y="130" font-size="16" font-weight="600" fill="#1c4b34">MCP 端点</text>
+    <text x="926" y="154" font-size="13" fill="#4c6b5c">/mcp/minimax-bot</text>
+    <text x="926" y="174" font-size="13" fill="#4c6b5c">21 个工具，SSE 保活</text>
+
+    <rect x="666" y="206" width="468" height="110" rx="12" fill="#ffffff" stroke="#bfe6cd"/>
+    <text x="686" y="236" font-size="16" font-weight="600" fill="#1c4b34">调度内核</text>
+    <text x="686" y="260" font-size="13" fill="#4c6b5c">engine：回合调度 / 重试 / 上下文装配 / 用量台账</text>
+    <text x="686" y="282" font-size="13" fill="#4c6b5c">task-dispatcher：后台任务 · 幂等 · 重启后 unknown</text>
+    <text x="686" y="304" font-size="13" fill="#4c6b5c">relay-guard：点名规则 / 标记清洗 / 接力护栏</text>
+
+    <!-- model providers -->
+    <rect x="40" y="400" width="1120" height="170" rx="18" fill="#fffdf5" stroke="#f0dfae"/>
+    <text x="66" y="438" font-size="20" font-weight="700" fill="#6b5310">模型后端（OpenAI 兼容 /chat/completions，按 Bot 选择）</text>
+
+    <rect x="66" y="460" width="250" height="86" rx="12" fill="#ffffff" stroke="#f0dfae"/>
+    <text x="86" y="490" font-size="16" font-weight="600" fill="#5c4a10">DeepSeek</text>
+    <text x="86" y="514" font-size="13" fill="#7a6218">api.deepseek.com</text>
+    <text x="86" y="534" font-size="13" fill="#7a6218">默认模型 deepseek-chat</text>
+
+    <rect x="336" y="460" width="250" height="86" rx="12" fill="#ffffff" stroke="#f0dfae"/>
+    <text x="356" y="490" font-size="16" font-weight="600" fill="#5c4a10">DSH 模型库（自动同步）</text>
+    <text x="356" y="514" font-size="13" fill="#7a6218">读 profile 的 providers/models</text>
+    <text x="356" y="534" font-size="13" fill="#7a6218">Key 从 DSH 凭据库解析</text>
+
+    <rect x="606" y="460" width="250" height="86" rx="12" fill="#ffffff" stroke="#f0dfae"/>
+    <text x="626" y="490" font-size="16" font-weight="600" fill="#5c4a10">自定义模型</text>
+    <text x="626" y="514" font-size="13" fill="#7a6218">任意 http(s) Base URL</text>
+    <text x="626" y="534" font-size="13" fill="#7a6218">+ 模型名 + 可选 Key</text>
+
+    <rect x="876" y="460" width="258" height="86" rx="12" fill="#ffffff" stroke="#f0dfae"/>
+    <text x="896" y="490" font-size="16" font-weight="600" fill="#5c4a10">能力包（插件式工具）</text>
+    <text x="896" y="514" font-size="13" fill="#7a6218">团队 / 后台助手 / 记忆 / 定时</text>
+    <text x="896" y="534" font-size="13" fill="#7a6218">文件 / 命令行</text>
+
+    <!-- arrows -->
+    <line x1="510" y1="190" x2="636" y2="190" stroke="#5c7bd6" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="520" y="178" font-size="13" fill="#3f5bb0">HTTP · SSE · MCP</text>
+    <line x1="600" y1="390" x2="600" y2="396" stroke="#5c7bd6" stroke-width="0"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+# Dependencies and run-time data never belong in the repository.
+node_modules/
+service/node_modules/
+service/tests/node_modules/
+service/data/
+service/config.json
+*.log
+logs/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="Dsh bot — 多 Bot 团队，装进 DeepSeek Harness">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1a36"/>
+      <stop offset="0.55" stop-color="#142b5c"/>
+      <stop offset="1" stop-color="#1c3f8f"/>
+    </linearGradient>
+    <linearGradient id="whale" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#8fb2ff"/>
+      <stop offset="1" stop-color="#4c72f5"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6ea8ff" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#6ea8ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#6ea8ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" rx="0" fill="url(#bg)"/>
+  <circle cx="1030" cy="70" r="180" fill="#2b57c9" opacity="0.28"/>
+  <circle cx="120" cy="380" r="160" fill="#1b3f9a" opacity="0.35"/>
+  <rect x="0" y="352" width="1200" height="2" fill="url(#glow)"/>
+
+  <!-- the whale mark -->
+  <g transform="translate(72 84) scale(1.12)">
+    <rect x="0" y="0" width="196" height="196" rx="46" fill="#ffffff" opacity="0.06"/>
+    <g transform="translate(18 18) scale(0.62)">
+      <path d="M46 150c0-38 34-66 78-66 45 0 79 27 79 63 0 12-4 23-11 32 15 3 26 12 31 24-18 3-33-1-44-10-15 12-36 19-60 19-45 0-73-26-73-62z" fill="url(#whale)"/>
+      <circle cx="104" cy="136" r="8" fill="#fff"/>
+      <path d="M120 74c2-14 12-22 22-24-4 10-3 18 2 24-8 4-17 4-24 0z" fill="#cfe0ff"/>
+      <circle cx="106" cy="62" r="6" fill="#cfe0ff"/>
+      <circle cx="146" cy="52" r="5" fill="#cfe0ff"/>
+    </g>
+  </g>
+
+  <text x="310" y="138" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="54" font-weight="700" fill="#ffffff">Dsh bot</text>
+  <text x="310" y="186" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="24" fill="#b9cdfb">一支长期在线的多 Bot 团队，装进 DeepSeek Harness</text>
+
+  <g font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="17" fill="#0f1a36">
+    <rect x="310" y="216" width="150" height="34" rx="17" fill="#9fc3ff"/>
+    <text x="330" y="239">左侧栏入口</text>
+    <rect x="470" y="216" width="186" height="34" rx="17" fill="#9fc3ff"/>
+    <text x="490" y="239">面板内嵌完整界面</text>
+    <rect x="666" y="216" width="150" height="34" rx="17" fill="#9fc3ff"/>
+    <text x="686" y="239">每 Bot 独立会话</text>
+  </g>
+
+  <g font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif" font-size="18" fill="#dbe6ff">
+    <text x="310" y="300">21 个团队工具 · 可插拔能力包 · 插件清单与 DSH 同步 · 模型库同步 · 自定义模型</text>
+    <text x="310" y="332" fill="#8fb2ff">MIT License · 由 minimax-bot 0.7.24 独立化移植而来</text>
+  </g>
+</svg>
