@@ -3405,3 +3405,19 @@ button.media-file { width: 100%; text-align: start; font: inherit; cursor: point
   max-height: 120px;
   overflow: auto;
 }
+
+/* Avatars are buttons: one click opens the Bot's settings wherever the avatar is drawn. */
+.mark-button {
+  display: inline-flex;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+.mark-button:hover {
+  filter: brightness(1.06);
+}
+
+.mark-button:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent, #4c72f5);
+}

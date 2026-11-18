@@ -39,7 +39,7 @@ import {
   toast,
   unreadOf,
 } from './core.js';
-import { openContextMenu, openExecutionRecords, openOverlay, renderDrawer, renderOverlay, wireOverlayKeys } from './panels.js';
+import { openContextMenu, openEntitySettings, openExecutionRecords, openOverlay, renderDrawer, renderOverlay, wireOverlayKeys } from './panels.js';
 import { locale, translateDom } from './i18n.js';
 import { applyReactionUpdate, closeDetachedReactionPicker, closeReactionPicker, reactionBar, reactionButton, updateBubbleReactions } from './reactions.js';
 
@@ -195,7 +195,7 @@ function renderSidebar() {
             oncontextmenu: (e) => rowMenu(e, chatId),
           },
           // Same unread dot as the rows, on the avatar's free corner (the star sits bottom-right).
-          h('span', { class: 'tile-mark' }, markOf(tile, { size: 60, star: true }), tileUnread ? h('span', { class: 'tile-unread', 'aria-hidden': 'true' }) : null),
+          h('span', { class: 'tile-mark' }, avatarButton('bot', tile, { size: 60, star: true }), tileUnread ? h('span', { class: 'tile-unread', 'aria-hidden': 'true' }) : null),
           h('span', { class: 'tile-name' }, tile.name),
         ),
       ),
@@ -208,6 +208,37 @@ function renderSidebar() {
     else nodes.push(h('p', { class: 'side-hint', role: 'status' }, t(`side.empty.${filter}`, { name })));
   }
   sideList.replaceChildren(...nodes);
+}
+
+/**
+ * An avatar that opens the entity's settings when clicked. It sits inside rows and message
+ * headers that have their own click behaviour, so the event never bubbles and Enter/Space work
+ * the same way the mouse does.
+ * @param {'bot' | 'group'} kind
+ * @param {any} entity
+ * @param {{ size?: number, star?: boolean, chatId?: string, state?: string }} [options]
+ */
+function avatarButton(kind, entity, options = {}) {
+  if (!entity) return null;
+  const open = () => openEntitySettings(kind, entity);
+  return h(
+    'span',
+    {
+      class: 'mark-button',
+      role: 'button',
+      tabindex: '0',
+      'aria-label': t(kind === 'bot' ? 'a11y.botSettings' : 'a11y.groupSettings', { name: entity.name }),
+      title: t(kind === 'bot' ? 'a11y.botSettings' : 'a11y.groupSettings', { name: entity.name }),
+      onclick: (event) => { event.preventDefault(); event.stopPropagation(); open(); },
+      onkeydown: (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        event.stopPropagation();
+        open();
+      },
+    },
+    kind === 'bot' ? markOf(entity, options) : groupMarkOf(entity, options.size ?? 36),
+  );
 }
 
 function sideRow({ kind, item, chatId }) {
@@ -227,7 +258,7 @@ function sideRow({ kind, item, chatId }) {
       onclick: () => openChat(chatId),
       oncontextmenu: (e) => rowMenu(e, chatId),
     },
-    kind === 'bot' ? markOf(item, { size: 36, star: true }) : groupMarkOf(item, 36),
+    avatarButton(kind, item, { size: 36, star: true }),
     h(
       'span',
       { class: 'row-body' },
@@ -584,7 +615,7 @@ function renderPill() {
           renderPill();
         },
       },
-      target.kind === 'bot' ? markOf(target.bot, { size: 26 }) : groupMarkOf(target.group, 26),
+      avatarButton(target.kind, target.bot ?? target.group, { size: 26 }),
       h('span', { class: 'pill-name' }, name),
       notice ? h('span', { class: 'pill-note' }, t('pill.memoryUpdated')) : null,
       h('span', { class: 'pill-chev' }, icon(state.drawer.open ? 'right' : 'left', 14)),
@@ -675,7 +706,7 @@ function emptyState() {
   return h(
     'div',
     { class: 'empty-chat' },
-    target.kind === 'bot' ? markOf(target.bot, { size: 88 }) : groupMarkOf(target.group, 88),
+    avatarButton(target.kind, target.bot ?? target.group, { size: 88 }),
     h('h2', null, target.bot?.name ?? target.group?.name),
     h('p', null, target.kind === 'bot' ? target.bot?.role || t('empty.bot') : target.group?.notice || t('empty.group')),
     h(
@@ -831,7 +862,7 @@ function relayItem(m) {
         h(
           'div',
           { class: 'gmsg-who' },
-          from ? markOf(from, { size: 24, chatId: m.chatId }) : null,
+          from ? avatarButton('bot', from, { size: 24, chatId: m.chatId }) : null,
           h('span', { class: 'gmsg-name' }, m.fromName ?? from?.name ?? 'Bot'),
         ),
         h('span', { class: 'chip' }, t('group.postedBy')),

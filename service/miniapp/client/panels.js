@@ -68,8 +68,22 @@ export function renderDrawer() {
   return target.bot ? botOverview(target.bot) : groupOverview(target.group);
 }
 
-export function openExecutionRecords(messageId) {
-  state.drawer = { ...state.drawer, open: true, view: 'execution', dirty: false };
+/**
+ * Opens one Bot's (or group's) settings drawer directly, without going through the sidebar menu.
+ * Every avatar in the interface routes here, so the same panel opens wherever it was clicked.
+ * @param {'bot' | 'group'} kind
+ * @param {{ id: string } | null | undefined} entity
+ */
+export function openEntitySettings(kind, entity) {
+  if (!entity?.id) return;
+  const chatId = `${kind}:${entity.id}`;
+  if (state.current !== chatId) nav.openChat(chatId);
+  state.drawer = { ...state.drawer, open: true, view: 'settings', dirty: false };
+  nav.renderDrawer();
+  nav.refreshChrome();
+}
+
+export function openExecutionRecords(messageId) {  state.drawer = { ...state.drawer, open: true, view: 'execution', dirty: false };
   renderDrawer();
   nav.refreshChrome();
   const record = [...drawer.querySelectorAll('[data-record-id]')].find((node) => node.dataset.recordId === messageId);
